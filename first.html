@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        .btn1,.btn2{
+            background-color: gray;
+            color: white;
+            font-size: 18px;
+            height: 50px;
+            width: 450px;
+            border: 2px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <p>Line1</p>
+    <p>Line2</p>
+    <p>Line3</p>
+    <p>Line4</p>
+    <br/><br/>
+    <input type="text" class="name" placeholder="Enter your name" /><br/><br/>
+    <input type="text" class="email" placeholder="Enter your email" /><br/>
+    <br/><br/><br/>
+    <button class="btn1">Click & Close the details..</button><br/>
+    <button class="btn2">Choice 1</button><br/>
+    <button class="btn2">Choice 2</button>
+    <br/><br/>
+    <div id="demo"></div>
+    <ul id="firstlist">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+    <script>
+        $("document").ready(function(){
+            $("p").click(function(){
+                $(this).hide();
+            });
+        });
+        $("document").ready(function(){
+            $("input.name").focus(function(){
+                $(this).css("background-color", "red");
+            });
+        });
+        $("document").ready(function(){
+            $("input.email").focus(function(){
+                $(this).css("background-color", "green");
+            });
+        });
+        $("document").ready(function(){
+            $("button.btn1").click(function(){
+                $(".btn2").fadeIn(1000);
+            })
+        })
+        $("#demo").html('<h3>Welcome to div</h3>');
+        $("ul#firstlist li:first").css('background-color', 'gray');
+        $("ul#firstlist").append('<li>Item 5</li>');
+        $("ul").before('<h1>Table start</h1>');
+        $("ul").after('<h1>Table end</h1>');
+        $("ul#firstlist").prepend('<li>Items</li>');
+
+        var myarr=['Brad', 'Kelley', 'Nate', 'Jose'];
+
+        $.each(myarr, function(i, val){
+            document.write(val);
+        })
+
+        $.each(myarr, function(i, val){
+            $('ul#firstlist').append('<li>'+val+'</li>');
+        });
+
+    </script>
+</body>
+</html>
